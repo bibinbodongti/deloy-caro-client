@@ -1,0 +1,27 @@
+.mainLogin{
+    margin: 50px auto;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.register{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 20px;
+    width: 300px;
+}
+.notice{
+    color: red;
+    margin-bottom: 10px;
+    width: 300px;
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+}
+.input>.MuiFormControl-root{
+    flex-grow: 1;
+}

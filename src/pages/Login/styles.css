@@ -1,0 +1,32 @@
+.mainLogin{
+    margin: 50px auto;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.input{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+}
+.input>.MuiFormControl-root{
+    flex-grow: 1;
+}
+.cbSavePass{
+    width: 300px;
+}
+.submit{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.notice{
+    color: red;
+    margin-bottom: 10px;
+    width: 300px;
+}
+.buttonSignInGG{
+    margin: 10px;
+}

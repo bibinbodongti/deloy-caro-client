@@ -1,0 +1,14 @@
+.listUserOnline{
+    display: flex;
+    
+}
+.itemUserOnline{
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    color: blue;
+    align-items: center;
+}
+.listUserContainer{
+    margin-top: 20px;
+}
