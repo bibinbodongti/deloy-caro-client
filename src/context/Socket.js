@@ -90,6 +90,7 @@ export const reconnectRoom = (roomID, setError) => {
           setError(true);
       });
     })
+    .catch(err=>setError(true));
 }
 export const sendMessage = (roomID, content, setError) => {
   Authorization('auth/profile', JSON.parse(localStorage.getItem('id_token')))

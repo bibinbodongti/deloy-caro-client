@@ -1,1 +1,1 @@
-export const API_URL = 'https://caro-api-client.herokuapp.com'
+export const API_URL = 'http://localhost:3000'

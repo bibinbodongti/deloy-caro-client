@@ -5,7 +5,7 @@ export const SocketContext = createContext();
 
 
 export const LoginProvider = props => {
-    const [isLogin, setIsLogin] = useState(true);
+    const [isLogin, setIsLogin] = useState(false);
 
     React.useEffect(() => {
         msgOnline(setIsLogin)
