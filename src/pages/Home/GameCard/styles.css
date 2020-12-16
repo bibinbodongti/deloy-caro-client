@@ -1,0 +1,15 @@
+.gameContainer{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    border: 1px solid #080808;
+}   
+.gameInformationDetail{
+    display: flex;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

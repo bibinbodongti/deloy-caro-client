@@ -45,9 +45,8 @@ const Login = () => {
                         }).then(res => {
                             handleLogin(res.data.access_token);
                             setNoticeForm('Đăng nhập thành công');
-                        }).catch(err => setNoticeForm('Mật khẩu sai'))
+                        }).catch(err => setNoticeForm('Mật khẩu sai'));
                     } catch (error) {
-                        console.log("Error: " + error.message);
                         setNoticeForm('Xảy ra lỗi khi đăng nhập, vui lòng thử lại sau');
                     }
                 }
@@ -59,7 +58,6 @@ const Login = () => {
     }
 
     const responseFacebook = (response) => {
-        console.log(response);
         try {
             CallAPI('auth/facebook', 'POST', {
                 access_token: response.accessToken,
@@ -69,12 +67,10 @@ const Login = () => {
                 setNoticeForm('Đăng nhập thành công');
             }).catch(err => setNoticeForm('Login with Facebook fail'))
         } catch (error) {
-            console.log("Error: " + error.message);
             setNoticeForm('Xảy ra lỗi khi đăng nhập, vui lòng thử lại sau');
         }
     }
     const responseGoogle = (response) => {
-        console.log('reponse: ' + response);
         try {
             CallAPI('auth/google', 'POST', {
                 access_token: response.tokenId,
@@ -84,7 +80,6 @@ const Login = () => {
             }).catch(err => setNoticeForm('Login with Google fail'));
         }
         catch (error) {
-            console.log("Error: " + error.message);
             setNoticeForm('Xảy ra lỗi khi đăng nhập, vui lòng thử lại sau');
         }
     }

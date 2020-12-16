@@ -1,0 +1,12 @@
+.homeContainer{
+    display: flex;
+}
+.listOnlineContainer{
+    flex-grow: 1;
+    background-color:#e0e0e0;
+    min-height: calc(100vh - 70px);
+}
+.listGameContainer{
+    flex-grow: 10;
+    margin-top: 10px;
+}

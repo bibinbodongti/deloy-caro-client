@@ -1,0 +1,17 @@
+.addNewGameContainer{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    border: 1px solid #080808;
+    align-items: center;
+}   
+.btnAdd{
+    width: -webkit-fill-available;
+}
+.btnAddContainer{
+    width: -webkit-fill-available;
+}
+.titleAddNewGame{
+    width: -webkit-fill-available;
+}

@@ -1,0 +1,10 @@
+.managerBoardContainer{
+    margin: 5px 10px;
+
+}
+.iconAddBoardButton>.MuiIconButton-label>.MuiSvgIcon-root{
+    font-size: 50px;
+}
+.mainBoardContainer{
+    margin: 5px 10px;
+}

@@ -1,11 +1,10 @@
-import React, { useState,useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {LoginContext} from '../../context/LoginContext';
-import { registerAPI } from '../../api/accountAPI';
-import hashPassword from './service/hashPassword';
+import { LoginContext } from '../../context/LoginContext';
+import CallAPI from './../../utils/CallAPI'
 import './styles.css';
 
 const SignUp = () => {
@@ -16,7 +15,7 @@ const SignUp = () => {
     const [inputEmail, setInputEmail] = useState('');
     const [noticeForm, setNoticeForm] = useState('');
 
-    const [isLogin]=useContext(LoginContext);
+    const [isLogin] = useContext(LoginContext);
 
     const onChangeUsername = (e) => {
         setInputUsername(e.target.value);
@@ -51,31 +50,29 @@ const SignUp = () => {
                         setNoticeForm('Email không đúng định dạng');
                         return;
                     } else {
-                        hashPassword(inputPassword).then((pw) => {
-                            console.log(pw);
-                            try {
-                                registerAPI({ username: inputUsername, name: inputName, email: inputEmail, pw: pw }).then((res) => {
-                                    if (res===true) {
-                                        setNoticeForm('Register success');
-                                        setInputUsername('');
-                                        setInputPassword('');
-                                        setInputRePassword('');
-                                        setInputName('');
-                                        setInputEmail('');
-                                    }
-                                    else setNoticeForm('Register fail');
-                                })
-                            } catch (error) {
-                                console.log("Error: " + error.message);
-                                setNoticeForm('Register fail');
-                            }
+                        CallAPI('auth/signup', 'POST', {
+                            username: inputUsername,
+                            name: inputName,
+                            email: inputEmail,
+                            password: inputPassword
+                        }).then(res => {
+                            setNoticeForm('Register success');
+                            setInputUsername('');
+                            setInputPassword('');
+                            setInputRePassword('');
+                            setInputName('');
+                            setInputEmail('');
+                        }).catch(error => {
+                            setNoticeForm('Register fail');
+
                         })
+
                     }
                 }
             }
         }
     }
-    if (isLogin) return <Redirect to='/'/>
+    if (isLogin) return <Redirect to='/' />
     return (
         <div>
             <Form className="mainLogin">

@@ -15,7 +15,6 @@ export const registerAPI = (data) => {
         fetch("https://caro-api-client.herokuapp.com/auth/signup", requestOptions)
             .then(response => response.text())
             .then(result => {
-                console.log(result);
                 if(result==='true') resolve(true);
                 else resolve(false);
             })

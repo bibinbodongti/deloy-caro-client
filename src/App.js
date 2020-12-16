@@ -34,7 +34,7 @@ function App() {
       </div>
       </LoginProvider>
     </Router >
-  );
+  );  
 }
 
 export default App;

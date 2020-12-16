@@ -1,0 +1,64 @@
+
+  
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.game-board{
+  width: auto;
+}
+  
+.status {
+    margin-bottom: 10px;
+}
+  
+.square {
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 5vh;
+    padding: 0;
+    text-align: center;
+    width: 5vh;
+  }
+.square--winning {
+  background-color: yellow;
+}
+
+.current-position {
+  background-color: blueviolet
+}
+  
+.square:focus {
+  outline: none;
+}
+  
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+  
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+  
+.game-info {
+  margin-left: 20px;
+}
+  .titleGameRoom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #2196f3;
+    padding: 5px;
+    color: #fff;
+}
+  

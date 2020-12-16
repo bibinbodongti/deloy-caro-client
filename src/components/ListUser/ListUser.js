@@ -6,19 +6,22 @@ import './styles.css';
 import blackCircle from './blackCircle.svg';
 import { SocketContext } from './../../context/LoginContext'
 import CallAuthAPI from './../../utils/CallAuthAPI'
+import { getOnlines } from './../../context/Socket'
 const ListUser = () => {
     const socket = React.useContext(SocketContext);
     const [users, setUsers] = React.useState([]);
 
-    React.useEffect(()=>{
+    React.useEffect(() => {
+        getOnlines(setUsers);
         socket.on('newConnect', users => {
             CallAuthAPI('users/online', 'POST', {
                 users: users,
             }, JSON.parse(localStorage.getItem('id_token')))
-            .then(res => {
-                setUsers(res.data)
-            })
+                .then(res => {
+                    setUsers(res.data)
+                })
         })
+
     }, [socket])
 
 
