@@ -4,11 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './styles.css';
 import blackCircle from './blackCircle.svg';
-import { SocketContext } from './../../context/LoginContext'
+import { socket } from './../../context/Socket'
 import CallAuthAPI from './../../utils/CallAuthAPI'
 import { getOnlines } from './../../context/Socket'
 const ListUser = () => {
-    const socket = React.useContext(SocketContext);
+    // const socket = React.useContext(SocketContext);
     const [users, setUsers] = React.useState([]);
 
     React.useEffect(() => {
@@ -22,7 +22,7 @@ const ListUser = () => {
                 })
         })
 
-    }, [socket])
+    }, [])
 
 
     return (

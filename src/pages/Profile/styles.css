@@ -1,0 +1,99 @@
+.profileContainer{
+  display: flex;
+  flex-direction: column;
+  background-color:#ffdac3;
+  color: #fff;
+  min-height: calc(100vh - 70px);
+  padding-top: 30px;
+}
+.labelInput{
+  color: brown;
+  font-weight: bold;
+}
+.titleProfile{
+  color: brown;
+  font-weight: bold;
+  align-self: center;
+}
+.input{
+  display: flex;
+  flex-direction: row;
+  width: 300px;   
+  color: brown;
+}
+.bodyProfile{
+  display: flex;
+  justify-content: space-around;
+}
+.profileImage{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  flex-basis: 300px;
+}
+.profileImageContainer{
+  background-color: #fff;
+  padding: 5px;
+}
+.profileInformation{
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+}
+.achievement{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.btnPageProfile{
+  background:linear-gradient(to bottom, #a82e09 5%, #cf6b00 100%);
+background-color:#a82e09;
+border-radius:3px;
+border:2px solid #DE9B72;
+display:inline-block;
+cursor:pointer;
+color:#DE9B72;
+font-family:Arial;
+font-size:14px;
+padding:2vh 2vh;
+text-decoration:none;
+}
+.btnPageProfile:hover{
+  background:linear-gradient(to bottom, #cf6b00 5%, #a82e09 100%);
+  background-color:#cf6b00;
+}
+.labelUploadImage{
+  color: brown;
+  margin-top: 10px;
+}
+.uploadImage{
+  background-color: brown;
+  margin-bottom: 5px;
+}
+.progessBar{
+  width: 40vh;
+  margin-bottom: 5px;
+}
+.progress-bar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: brown;
+  transition: width .6s ease;
+}
+.noticeProfile{
+  color: red;
+  width: 300px;
+}
+.btnChangePassword{
+  display: flex;
+  align-items: center;
+  width: 100vh;
+}

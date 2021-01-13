@@ -1,14 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FacebookLogin from 'react-facebook-login';
 import { GoogleLogin } from 'react-google-login';
+import FacebookIcon from '../../components/Icons/FacebookIcon';
+
 
 import './styles.css';
 import { LoginContext } from '../../context/LoginContext';
 import CallAPI from './../../utils/CallAPI';
-
+import Header from './../../components/Header/Header'
 
 const Login = () => {
     const [isLogin, handleLogin] = useContext(LoginContext);
@@ -43,9 +45,14 @@ const Login = () => {
                             username: inputUsername,
                             password: inputPassword
                         }).then(res => {
-                            handleLogin(res.data.access_token);
-                            setNoticeForm('Đăng nhập thành công');
-                        }).catch(err => setNoticeForm('Mật khẩu sai'));
+                            if (res.data.access_token) {
+                                handleLogin(res.data.access_token);
+                                setNoticeForm('Đăng nhập thành công');
+                            }
+                            else {
+                                if (res.data.err) setNoticeForm(res.data.err);
+                            }
+                        }).catch(err => setNoticeForm('Mật khẩu sai, vui lòng kiểm tra lại'));
                     } catch (error) {
                         setNoticeForm('Xảy ra lỗi khi đăng nhập, vui lòng thử lại sau');
                     }
@@ -83,50 +90,52 @@ const Login = () => {
             setNoticeForm('Xảy ra lỗi khi đăng nhập, vui lòng thử lại sau');
         }
     }
-
+    const facebookIcon = <div className='iconFb'><FacebookIcon /></div>;
     if (isLogin) return <Redirect to='/' />
     return (
+        <>
+        <Header/>
         <Form className="mainLogin">
-            <h5 style={{ color: 'blue' }}>Đăng nhập</h5>
+            <h5 className='labelInput'>Đăng nhập</h5>
+            <div className="noticeLogin">{noticeForm}</div>
             <Form.Group controlId="username">
-                <Form.Label >Username</Form.Label>
+                <Form.Label className='labelInput'>Username</Form.Label>
                 <Form.Control onChange={onChangeUsername} value={inputUsername} type="text" placeholder="Enter your username" className="input" />
             </Form.Group>
             <Form.Group controlId="password">
-                <Form.Label>Password</Form.Label>
+                <Form.Label className='labelInput'>Password</Form.Label>
                 <Form.Control onChange={onChangePassword} value={inputPassword} className="input" type="password" placeholder="Enter your password" onKeyPress={handleOnKeyPress} />
             </Form.Group>
-            <Form.Group className="cbSavePass" controlId="savepassword">
-                <Form.Check type="checkbox" label="Lưu mật khẩu" />
-            </Form.Group>
-            <div className="notice">{noticeForm}</div>
+            {/* <Form.Group className="cbSavePass" controlId="savepassword">
+                <Form.Link to='/forgetpassword'/>
+            </Form.Group> */}
+            <Link to='/forgetpassword'><div className="noticeLogin">Quên mật khẩu?</div></Link>
+
             <div className="submit">
-                <Button href='/signup' id="signup" variant="primary" type="button">
+                <Button className='btnPageLogin' href='/signup' id="signup" type="button">
                     Đăng ký</Button>
-                <Button onClick={onLogin} id="signin" variant="primary" type="button">
+                <Button className='btnPageLogin' onClick={onLogin} id="signin" type="button">
                     Đăng nhập</Button>
             </div>
-            <div className="buttonSignInGG">
+            <div className="buttonSignInGGFBContainer">
                 <FacebookLogin
                     appId="383205282732112"
                     autoLoad={false}
+                    cssClass='btnLoginWithFacebook'
                     callback={responseFacebook}
-                    cssClass="my-facebook-button-class"
-                    icon="fa-facebook"
-                    render={renderProps => (
-                        <Button
-                            variant="secondary" onClick={renderProps.onClick}>Login with Facebook</Button>
-                    )}
-
+                    icon={facebookIcon}
+                    textButton="Đăng nhập với Facebook"
                 />
                 <GoogleLogin
+                    className='btnLoginWithGoogle'
                     clientId="240672023608-4f2866cjcr4a85balfitk2eadkc7f4kc.apps.googleusercontent.com"
                     onSuccess={responseGoogle}
                     isSignedIn={false}
-                    buttonText="Login with google"
+                    buttonText="Đăng nhập với Google"
                 />
             </div>
         </Form>
+        </>
     )
 }
 

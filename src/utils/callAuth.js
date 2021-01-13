@@ -6,7 +6,7 @@ const callAuthenticationAPI = (endpoint, contentHeader) => {
         headers: {
             'Authorization': 'Bearer ' + contentHeader
         }
-    });
+    }).catch(err => {throw err});
 }
 
 export default callAuthenticationAPI;

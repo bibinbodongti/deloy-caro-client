@@ -1,5 +1,5 @@
 import React, { useState, createContext } from 'react';
-import { socket, msgOnline, msgLogout } from './Socket'
+import {  msgOnline, msgLogout } from './Socket'
 export const LoginContext = createContext();
 export const SocketContext = createContext();
 
@@ -21,9 +21,7 @@ export const LoginProvider = props => {
     }
     return (
         <LoginContext.Provider value={[isLogin, handleLogin, handleLogout]}>
-            <SocketContext.Provider value={socket}>
                 {props.children}
-            </SocketContext.Provider>
         </LoginContext.Provider>
     )
 }

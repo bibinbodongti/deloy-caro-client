@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import routes from './routes';
-import Header from './components/Header/Header';
-import {LoginProvider} from './context/LoginContext';
+import { LoginProvider } from './context/LoginContext';
 
 const showContentMenus = (routes) => {
   let result = null;
@@ -22,19 +21,22 @@ const showContentMenus = (routes) => {
 }
 function App() {
   return (
+    <div >
+ <div className='App-container ' >  
     <Router>
       <LoginProvider>
-      <div className='App-container'>
-        <Header/>
         {
-            <Switch>
-              {showContentMenus(routes)}
-            </Switch>
+          <Switch>
+            {showContentMenus(routes)}
+          </Switch>
         }
-      </div>
       </LoginProvider>
     </Router >
-  );  
+    </div>
+
+    </div>
+   
+  );
 }
 
 export default App;

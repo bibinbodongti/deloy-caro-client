@@ -1,0 +1,44 @@
+.labelInputPageForgetPassword{
+  color: brown;
+  font-weight: bold;
+}
+.btnPageForgetPassword{
+  background:linear-gradient(to bottom, #a82e09 5%, #cf6b00 100%);
+  background-color:#a82e09;
+  border-radius:3px;
+  border:2px solid #DE9B72;
+  display:inline-block;
+  cursor:pointer;
+  color:#DE9B72;
+  font-family:Arial;
+  font-size:14px;
+  padding:0vh 2vh;
+  text-decoration:none;
+}
+.btnPageForgetPassword:hover{
+  background:linear-gradient(to bottom, #cf6b00 5%, #a82e09 100%);
+  background-color:#cf6b00;
+}
+.forgetPasswordContainer{
+  padding-top: 50px;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color:#ffdac3;
+  color: #fff;
+  min-height: calc(100vh - 70px);
+}
+.inputPageForgetPassword{
+  display: flex;
+  flex-direction: row;
+  width: 400px;   
+  color: brown;
+}
+.forgetPasswordContent{
+  display: flex;
+}
+.noticeForgetPassword{
+  color: red;
+  margin-bottom: 10px;
+  width: 400px;
+}

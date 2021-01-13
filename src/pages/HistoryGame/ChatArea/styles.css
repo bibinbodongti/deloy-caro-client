@@ -1,0 +1,83 @@
+.host{
+    flex-basis: 80%;
+    background-color: white;
+}
+.guest{
+    flex-basis: 80%;
+    background-color: #ffdac3;
+    color: #DE9B72;
+}
+.pageChatRoomContainer{
+    flex-direction: column;
+    flex-basis: 100%;
+    height: 100vh;
+}
+
+.pageChatRoomHeader{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: brown;
+}
+.pageChatRoomBody{
+    width: auto;
+    overflow-y: scroll;
+    height: 100px;
+    background-color: #ffdac3;
+}
+.hostContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 10px;
+}
+.guestContainer{
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+}
+.iconMessage{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 100%;
+    background-color: brown;
+    color: #fff;
+    padding: 10px;
+}
+.iconMessage-hidden{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 100%;
+    background-color: brown;
+    color: #fff;
+    padding: 10px;
+    display: none;
+}
+.noticeMessage{
+    color: red;
+}
+.pageChatRoomFooter{
+    background-color: brown;
+}
+
+a {
+    text-decoration: none;
+    padding: 4px;
+    color: #ffdac3;
+}
+
+a:focus {
+    text-decoration: none;
+    color: #ffdac3;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #ffdac3;
+}
+
+.nav-tabs{
+    border-bottom: none;
+}

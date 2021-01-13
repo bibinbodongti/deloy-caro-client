@@ -1,14 +1,17 @@
 .mainLogin{
-    margin: 50px auto;
     justify-content: center;
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color:#ffdac3;
+    color: #fff;
+    min-height: calc(100vh - 70px);
 }
 .input{
     display: flex;
     flex-direction: row;
-    width: 300px;
+    width: 300px;   
+    color: brown;
 }
 .input>.MuiFormControl-root{
     flex-grow: 1;
@@ -16,17 +19,66 @@
 .cbSavePass{
     width: 300px;
 }
-.submit{
+.submitResetPassword{
     width: 300px;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
+    margin-right: 20px;
 }
-.notice{
+.noticeLogin{
     color: red;
     margin-bottom: 10px;
     width: 300px;
 }
-.buttonSignInGG{
-    margin: 10px;
+.forgetPasswordLogin{
+    color: brown;
+    margin-bottom: 10px;
+    width: 300px;
 }
+.buttonSignInGGFBContainer{
+    margin: 10px;
+    display: flex;
+}
+.btnLoginWithFacebook{
+    background-color: #fff;
+    display: inline-flex;
+    align-items: center;
+    color: #000;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Roboto, sans-serif;
+    margin-right: 10px; 
+    padding: 10px;
+    border-radius: 2px;
+}
+.btnLoginWithGoogle{
+    color: #000 !important;
+}
+.iconFb{
+    margin-right: 20px;
+}
+.labelInput{
+    color: brown;
+    font-weight: bold;
+}
+.btnPageLogin{
+    background:linear-gradient(to bottom, #a82e09 5%, #cf6b00 100%);
+	background-color:#a82e09;
+	border-radius:3px;
+	border:2px solid #DE9B72;
+	display:inline-block;
+	cursor:pointer;
+	color:#DE9B72;
+	font-family:Arial;
+	font-size:14px;
+	padding:2vh 2vh;
+	text-decoration:none;
+}
+.btnPageLogin:hover{
+    background:linear-gradient(to bottom, #cf6b00 5%, #a82e09 100%);
+	background-color:#cf6b00;
+}
+        

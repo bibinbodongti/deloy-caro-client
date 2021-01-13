@@ -1,18 +1,19 @@
 import React,{useState} from 'react';
 import { InputGroup,FormControl,Button } from 'react-bootstrap';
 
-
 const SendMessageComponent = ({sendMessage}) => {
   const [input,setInput]=useState('');
   const handleChangeInput=(e)=>{
     setInput(e.target.value);
   }
-  const handleSendMessage=()=>{
+  const handleSendMessage=(e)=>{
+    e.preventDefault();
     sendMessage(input);
     setInput('');
   }
   return (
     <div>
+      <form onSubmit={handleSendMessage}>
       <InputGroup className="mb-2">
         <FormControl
           placeholder="Enter message..."
@@ -22,9 +23,10 @@ const SendMessageComponent = ({sendMessage}) => {
           onChange={handleChangeInput}
         />
         <InputGroup.Append>
-          <Button onClick={handleSendMessage} variant="outline-light">Gửi</Button>
+          <Button type='submit' onClick={handleSendMessage} variant="outline-light">Gửi</Button>
         </InputGroup.Append>
       </InputGroup>
+      </form>
     </div>
   )
 }

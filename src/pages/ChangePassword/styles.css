@@ -1,0 +1,47 @@
+.resetPasswordContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color:#ffdac3;
+  color: #fff;
+  min-height: calc(100vh - 70px);
+  padding-top: 50px;
+}
+.inputResetPassword{
+  display: flex;
+  flex-direction: row;
+  width: 300px;   
+  color: brown;
+}
+.labelInputResetPassword{
+  color: brown;
+  font-weight: bold;
+}
+.btnPageResetPassword{
+  background:linear-gradient(to bottom, #a82e09 5%, #cf6b00 100%);
+  background-color:#a82e09;
+  border-radius:3px;
+  border:2px solid #DE9B72;
+  display:inline-block;
+  cursor:pointer;
+  color:#DE9B72;
+  font-family:Arial;
+  font-size:14px;
+  padding:2vh 2vh;
+  text-decoration:none;
+}
+.btnPageResetPassword:hover{
+  background:linear-gradient(to bottom, #cf6b00 5%, #a82e09 100%);
+  background-color:#cf6b00;
+}
+.noticeResetPassword{
+  color: red;
+  margin-bottom: 10px;
+  width: 300px;
+}
+.submit{
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

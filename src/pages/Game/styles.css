@@ -1,4 +1,4 @@
-.gamePageContainer{
+/* .gamePageContainer{
     display: flex;
     justify-content:right;
 }
@@ -8,4 +8,8 @@
 .listOnlineAreaContainer{
     flex-grow: 0;
     background-color:#e0e0e0;
-}
+} */
+.dark-background {
+    background: var(--dark-color), 
+    linear-gradient(to right, rgb(103, 64, 6) 0%, rgb(86, 34, 0) 100%);
+  }

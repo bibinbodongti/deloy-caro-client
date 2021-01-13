@@ -1,0 +1,71 @@
+.historyTitle {
+    color: brown;
+    font-weight: bold;
+}
+
+.historyContainer{
+    background-color: #DE9B72;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.historyTableHead {
+    background-color:  brown;
+}
+
+.historyTableBody {
+    height: calc(100vh - 275px);
+    overflow-x:auto;
+    border-bottom: 2px solid #DE9B72;
+    scrollbar-color: red yellow;
+    background-color: brown;
+}
+
+th{ 
+    height: 8vh;
+    text-align: center;
+    color: #DE9B72;
+    text-transform: uppercase;
+    border-bottom: solid 2px #DE9B72;
+    width: 25%;
+  }
+td{
+    height: 8vh;
+    width: 25%;
+    vertical-align:middle;
+    color: #DE9B72;
+    border-bottom: solid 2px #DE9B72;
+    text-align: center;
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.paginationItem {
+    background-color: #DE9B72;
+}
+
+.paginationItem > a {
+    background-color: brown;
+    color:  #DE9B72;
+    border-color: brown;
+}
+
+.paginationItem > a:hover {
+    background-color: brown;
+    border-color: brown;
+    color: #FFFFFF;
+}
+
+.paginationItem > span {
+    background-color: #DE9B72 !important;
+    border-color:  #DE9B72 !important;
+    color: #FFFFFF;
+}

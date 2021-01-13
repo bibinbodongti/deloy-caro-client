@@ -1,3 +1,15 @@
 .login{
     margin: 0px 5px;
 }
+.headerContainer{
+    background-color: brown;
+}
+.navbarConfig{
+    display: flex;
+}
+.headerContentContainer{
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    align-items: center;
+}

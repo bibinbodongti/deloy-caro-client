@@ -7,6 +7,7 @@
 }
 
 .game-board{
+  margin-top: 10px;
   width: auto;
 }
   
@@ -18,13 +19,10 @@
     background: #fff;
     border: 1px solid #999;
     float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 5vh;
+    height: 4vh;
     padding: 0;
     text-align: center;
-    width: 5vh;
+    width: 4vh;
   }
 .square--winning {
   background-color: yellow;
@@ -62,3 +60,472 @@
     color: #fff;
 }
   
+
+
+.inner-border {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.outer-border {
+border: 2px solid #DE9B72;
+   height: 99%;
+  width: 98%;
+  padding: 6px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+.outer-border {
+  height: 94%;
+}
+}
+
+.mid-border {
+  border: 6px solid #DE9B72;
+  height: 100%;
+  width: 100%;
+  padding: 6px;
+  margin: auto;
+}
+
+.inner-border {
+position: relative;
+border: 2px solid #DE9B72;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+/* Decorations */
+.corner-decoration {
+	position: absolute;
+    width: 1em;
+    margin: -3px;
+}
+
+@media (min-width: 768px) {
+	.corner-decoration {
+		width: 1em;
+	  	margin: -4px;
+	}
+}
+
+@media (min-width: 992px) {
+	.corner-decoration {
+		width: 1em;
+	  	margin: -5px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.corner-decoration {
+		width: 1em;
+	  	margin: -6px;
+	}
+}
+
+.corner-decoration.corner-left-top {
+	left: 0;
+	top: 0;
+}
+
+.corner-decoration.corner-right-top {
+	top: 0;
+	right: 0;
+	 -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.corner-decoration.corner-right-bottom {
+	right: 0;
+	bottom: 0;
+	 -webkit-transform: scale(-1);
+  	transform: scale(-1);
+}
+
+.corner-decoration.corner-left-bottom {
+	left: 0;
+	bottom: 0;
+	-webkit-transform: scaleY(-1);
+  	transform: scaleY(-1);
+}
+
+
+.vertical-decoration {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+  width: 10em;}
+
+.vertical-decoration.top {
+	top: 0;
+
+}
+
+
+.vertical-decoration.bottom {
+	bottom: 0;
+	-webkit-transform: scaleY(-1);
+  	transform: scaleY(-1);
+}
+
+.myButton {
+	background:linear-gradient(to bottom, #a82e09 5%, #cf6b00 100%);
+	background-color:#a82e09;
+	border-radius:3px;
+	border:2px solid #DE9B72;
+	display:inline-block;
+	cursor:pointer;
+	color:#DE9B72;
+	font-family:Arial;
+	font-size:14px;
+	padding:2vh 2vh;
+	text-decoration:none;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #cf6b00 5%, #a82e09 100%);
+	background-color:#cf6b00;
+}
+
+
+        
+h5{
+  color: #DE9B72
+}
+
+h3{
+  color: #DE9B72
+}
+
+.start-btn{
+  position: fixed;
+  width: 10vw;
+  height: 8vh;
+  top: 50%;
+  left: 50%;
+  margin-top: -4vh; /* Negative half of height. */
+  margin-left: -5vw  ;
+  z-index: 800;
+  font-size: large;
+  text-align: center;
+}
+
+.result{
+  position: fixed;
+  width: 30vw;
+  height: 46vh;
+  top: 50%;
+  left: 50%;
+  margin-top: -23vh; /* Negative half of height. */
+  margin-left: -15vw ;
+  z-index: 1000;
+  font-size: large;
+  text-align: center;
+  background-color: brown;
+
+
+}
+
+.upResult {
+  animation-name: upResult;
+  animation-duration: 1000ms;
+}
+
+.downResult {
+  animation-name: downResult;
+  animation-duration: 1000ms;
+}
+
+@keyframes upResult {
+  0% {
+    transform: scale(0)
+  }
+  100% {
+    transform: scale(1)
+  }   
+}
+
+@keyframes downResult {
+  0% {
+    transform: scale(1)
+  }
+  100% {
+    transform: scale(0)
+  }    
+}
+
+.add-user{
+  width: 15vh;
+  height: 15vh;
+  border: 2px solid #DE9B72;
+  opacity: 0.1;
+   animation-name: example;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+}
+ 
+ @keyframes example {
+   0%   {opacity: 0.1;}
+   50% {opacity: 1;}
+   100% {opacity: 0.1;}
+ }
+
+.add-user:hover{
+  animation-name: none;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+  opacity: 1
+}
+
+
+
+table{
+  width:100%;
+  table-layout: fixed;
+  border-bottom: solid 2px #DE9B72
+  
+}
+.tbl-header{
+  background-color:  transparent;
+ }
+.tbl-content{
+  height:fit-content;
+  min-height: 20vh;
+  max-height: 40vh;
+  overflow-x:auto;
+  border-bottom: 2px solid #DE9B72;
+  scrollbar-color: red yellow
+}
+th{
+  height: 8vh;
+  text-align: center;
+  color: #DE9B72;
+  text-transform: uppercase;
+  border-bottom: solid 2px #DE9B72
+}
+td{
+  height: 8vh;
+  vertical-align:middle;
+  color: #DE9B72;
+  border-bottom: solid 2px #DE9B72;
+}
+
+
+.viewer{
+  position: fixed;
+  width: 30vw;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  margin-top: -40vh; /* Negative half of height. */
+  margin-left: -15vw ;
+  z-index: 1000;
+  font-size: large;
+  text-align: center;
+  background-color: brown;
+
+
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px #DE9B72; 
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #DE9B72; 
+  border-radius: 10px;
+  opacity: 0.5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e98b51; 
+  opacity: 1;
+}
+
+
+.invite{
+  position: fixed;
+  width: 38vw;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  margin-top: -40vh; /* Negative half of height. */
+  margin-left: -19vw ;
+  z-index: 1000;
+  font-size: large;
+  text-align: center;
+  background-color: brown;
+
+
+}
+
+.outGame{
+  position: fixed;
+  width: 38vw;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  margin-top: -20vh; /* Negative half of height. */
+  margin-left: -19vw ;
+  z-index: 1000;
+  font-size: large;
+  text-align: center;
+  background-color: brown;
+
+
+}
+
+.surrender{
+  position: fixed;
+  width: 38vw;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  margin-top: -20vh; /* Negative half of height. */
+  margin-left: -19vw ;
+  z-index: 1000;
+  font-size: large;
+  text-align: center;
+  background-color: brown;
+}
+
+.drawRequest{
+  position: fixed;
+  width: 38vw;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  margin-top: -20vh; /* Negative half of height. */
+  margin-left: -19vw ;
+  z-index: 1000;
+  font-size: large;
+  text-align: center;
+  background-color: brown;
+}
+
+.close-button{
+  position: absolute; 
+  right: 1vw; 
+  top: 1vh;
+   opacity: 0.5 
+}
+
+.close-button:hover{
+  opacity: 1;
+}
+
+.notice-game{
+  position: fixed;
+  width: 38vw;
+  height: fit-content;
+  top: 80%;
+  left: 50%;
+  margin-left: -19vw ;
+  margin-top: -2vh ;
+  z-index: 1000;
+  font-size: large;
+  text-align: center;
+  background-color: brown;
+  animation-name: zoom;
+  animation-duration: 4s;
+  opacity: 0;
+}
+
+ 
+@keyframes zoom {
+  0%   {transform: scale(0); opacity: 0;}
+  30% {transform: scale(1); opacity: 1;}
+  70% {transform: scale(1); opacity: 1;}
+  100% {transform: scale(0); opacity: 0;}
+}
+
+.none-button {
+  background-color: transparent;
+  border: none !important;
+  outline: none !important
+}
+
+.sidebar-infor{
+  border: 5px solid #DE9B72;
+  position: relative;
+  background-color: brown;
+  min-height: 100vh
+}
+
+.text-align-center {
+  text-align: center
+}
+.mt-2{
+  margin-top: 2vh;
+}
+
+.ml-2{
+  margin-left: 2vw;
+}
+
+.mr-2{
+  margin-right: 2vw;
+}
+
+.player-avatar{
+  width: 15rem;
+  height: 15rem;
+  margin-top: 2vh
+}
+
+.img-out-room{
+  height: 3vh; 
+  width: 8vh
+}
+
+.img-avatar{
+  width: 15vh;
+  height: 15vh;
+  border: 2px solid #DE9B72
+}
+
+.img-cup{
+  height: 3vh; 
+  width: 3vh;
+}
+
+.sidebar-infor-footer{
+  position: absolute; 
+  bottom: 12vh; 
+  left: 0; 
+  right: 0
+}
+
+.stand-up-button{
+  position: absolute; 
+  left: 2rem; 
+  right: 1rem
+}
+
+.viewer-button{
+  position: absolute; 
+  left: 1rem; 
+  right: 2rem
+}
+
+.notice-content{
+  padding-top: 5vh;
+  padding-bottom: 5vh
+}
+
+.ready {
+  -webkit-box-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: #FFF 0 -1px 4px, #ff0 0 -6px 20px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+

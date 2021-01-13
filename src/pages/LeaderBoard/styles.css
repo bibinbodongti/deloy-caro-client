@@ -1,0 +1,37 @@
+.tbl-content-leader-rank{
+  height: calc(100vh - 90px - 156px);
+  overflow-x:auto;
+  border-bottom: 2px solid #DE9B72;
+  scrollbar-color: red yellow;
+  background-color: brown;
+}
+.tbl-header-leader-rank{
+  background-color:  brown;
+ }
+th{ 
+  height: 8vh;
+  text-align: center;
+  color: #DE9B72;
+  text-transform: uppercase;
+  border-bottom: solid 2px #DE9B72;
+  width: 25%;
+}
+td{
+  height: 8vh;
+  width: 25%;
+  vertical-align:middle;
+  color: #DE9B72;
+  border-bottom: solid 2px #DE9B72;
+  text-align: center;
+}
+.leaderboardContainer{
+  background-color: #DE9B72;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.titleLeaderBoard{
+  color: brown;
+  font-weight: bold;
+}

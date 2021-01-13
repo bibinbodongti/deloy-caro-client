@@ -1,18 +1,25 @@
-.mainLogin{
-    margin: 50px auto;
+.mainSignUp{
     justify-content: center;
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color:#ffdac3;
+    color: #fff;
+    min-height: calc(100vh - 70px);
+    padding: 20px 0px;
 }
-.register{
+.registerButtonContainer{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 20px;
     width: 300px;
 }
-.notice{
+.labelInput{
+    color: brown;
+    font-weight: bold;
+}
+.noticeSignUp{
     color: red;
     margin-bottom: 10px;
     width: 300px;
@@ -20,8 +27,26 @@
 .input{
     display: flex;
     flex-direction: row;
-    width: 300px;
+    width: 300px;   
+    color: brown;
 }
 .input>.MuiFormControl-root{
     flex-grow: 1;
+}
+.btnPageRegister{
+    background:linear-gradient(to bottom, #a82e09 5%, #cf6b00 100%);
+	background-color:#a82e09;
+	border-radius:3px;
+	border:2px solid #DE9B72;
+	display:inline-block;
+	cursor:pointer;
+	color:#DE9B72;
+	font-family:Arial;
+	font-size:14px;
+	padding:2vh 2vh;
+	text-decoration:none;
+}
+.btnPageRegister:hover{
+    background:linear-gradient(to bottom, #cf6b00 5%, #a82e09 100%);
+	background-color:#cf6b00;
 }

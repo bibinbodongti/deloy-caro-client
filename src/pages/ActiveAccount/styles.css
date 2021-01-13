@@ -1,0 +1,12 @@
+.acticeAccountContainer{
+  padding-top: 50px;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color:#ffdac3;
+  min-height: calc(100vh - 70px);
+  color: brown;
+}
+.loginContinue{
+  color: brown;
+}

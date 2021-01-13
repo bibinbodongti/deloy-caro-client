@@ -1,37 +1,45 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './styles.css';
 import GameArea from './GameArea/GameArea';
 import ChatArea from './ChatArea/index';
-import { useParams, Redirect } from "react-router-dom";
-import { reconnectRoom, socket } from './../../context/Socket'
-import ListUser from '../../components/ListUser/ListUser';
+import { useParams } from "react-router-dom";
+import { LoginContext } from '../../context/LoginContext';
+import { reconnectRoom } from '../../context/Socket'
 
 const Game = () => {
-    const { id } = useParams();
-    const [error, setError] = React.useState(false)
-    
-    React.useEffect(() => {
-        reconnectRoom(id, setError);
-        socket.on('message', res => console.log(res));
-    }, [id])
+  const { id } = useParams();
+  const [login, setLogin] = React.useState(false);
+  const [isLogin] = React.useContext(LoginContext);
+  const [isConnect, setIsConnect] = React.useState(false);
+  const [isPlayer, setIsPlayer] = React.useState(false);
+  const [isHost, setIsHost] = React.useState(false);
 
-    if (error) return <Redirect to='/' />
+  React.useEffect(() => {
+    setLogin(isLogin);
+  }, [isLogin]);
 
-    return (
-        <Container fluid className='gamePageContainer'>
-            <div className='gameAreaContainer' >
-                <GameArea roomID = {id}/>
-            </div>
-            <div className='listOnlineAreaContainer'>
-                <ListUser/>
-            </div>
-            <div className='chatAreaContainer'>
-                <ChatArea roomID={id}/>
-            </div>
-        </Container>
-    )
+  React.useEffect(()=>{
+    reconnectRoom(id, setIsConnect, setIsHost, setIsPlayer);
+  },[id] )
+
+  return (
+    <Container fluid style={{ backgroundColor: "#ffdac3" }}>
+      {login ? (
+        <>
+          <Row >
+            <Col lg={9} xs={12}>
+              {isConnect? <GameArea roomID={id} isPlayer = {isPlayer} isHost = {isHost}/> : <></>}
+            </Col>
+            <Col lg={3} xs={12}>
+              <ChatArea roomID={id} />
+            </Col>
+          </Row>
+        </>
+      ) : null}
+    </Container>
+  )
 }
 export default Game;
