@@ -36,7 +36,7 @@ const Login = () => {
             }
             else {
                 if (inputPassword.length < 7) {
-                    setNoticeForm("Mat khau phai >= 7 ky tu");
+                    setNoticeForm("Mật khẩu phải lớn hơn hoặc bằng 7 ký tự");
                     return;
                 }
                 else {
