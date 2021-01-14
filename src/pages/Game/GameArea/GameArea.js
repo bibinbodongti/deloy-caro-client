@@ -1442,7 +1442,7 @@ const GameArea = (props) => {
                       </button>
                       <div className='notice-content'>
                         <h3>Cầu hòa</h3>
-                        <h5>Bạn có muốn cầu hòa đối thủ không?</h5>
+                        <h5>{drawRequest===0?'Bạn có muốn cầu hòa đối thủ không?':'Đối thủ muốn cầu hòa bạn'}</h5>
                         <div>
                           <div className='myButton mt-2 mr-2' onClick={() => {
                             document.getElementById('drawRequest').className = 'drawRequest outer-border downResult';
